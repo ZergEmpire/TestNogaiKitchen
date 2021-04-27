@@ -6,6 +6,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.PageFactory;
 import page.Main;
 import page.TaskOneCheckElementInMainPage;
@@ -31,14 +33,13 @@ public class TestBase {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
             driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
             main = PageFactory.initElements(driver, Main.class);
             taskOneCheckElementInMainPage = PageFactory.initElements(driver, TaskOneCheckElementInMainPage.class);
             taskSecondSendAnOrder = PageFactory.initElements(driver, TaskSecondSendAnOrder.class);
             taskTestLoginForm = PageFactory.initElements(driver, TaskTestLoginForm.class);
         }
-
 
         //Сюда то, что выполняется после выполнения теста
        /* @AfterEach
