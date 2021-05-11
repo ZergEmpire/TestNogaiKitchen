@@ -19,8 +19,8 @@ public class PageBase {
     String TestName = "Test";
     String TestEmailAddress = "test@test.ru";
     String TestPhoneNumberLogin = "+77777777777";
-    String AddressStreet = "улица Ярославского, Якутск";
-    String AddressHome = "3";
+    String AddressStreet = "улица Чернышевского, Якутск";
+    String AddressHome = "4/1";
     String OrderComment = "Тест. Не готовить";
     String howMoneyToCourier = "5000";
 

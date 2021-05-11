@@ -9,10 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.PageFactory;
-import page.Main;
-import page.TaskOneCheckElementInMainPage;
-import page.TaskSecondSendAnOrder;
-import page.TaskTestLoginForm;
+import page.*;
 
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -20,9 +17,10 @@ import java.util.concurrent.TimeUnit;
 public class TestBase {
        public WebDriver driver;
        public Main main;
-       public TaskOneCheckElementInMainPage taskOneCheckElementInMainPage;
+
        public TaskSecondSendAnOrder taskSecondSendAnOrder;
        public TaskTestLoginForm taskTestLoginForm;
+       public TaskThreeTestSecondarySS taskThreeTestSecondarySS;
 
         //Сюда операции выполняющиеся перед стартом теста
         @BeforeEach
@@ -33,13 +31,15 @@ public class TestBase {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
             driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
             main = PageFactory.initElements(driver, Main.class);
-            taskOneCheckElementInMainPage = PageFactory.initElements(driver, TaskOneCheckElementInMainPage.class);
+
             taskSecondSendAnOrder = PageFactory.initElements(driver, TaskSecondSendAnOrder.class);
             taskTestLoginForm = PageFactory.initElements(driver, TaskTestLoginForm.class);
+            taskThreeTestSecondarySS = PageFactory.initElements(driver, TaskThreeTestSecondarySS.class);
         }
+
 
         //Сюда то, что выполняется после выполнения теста
        /* @AfterEach
